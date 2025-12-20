@@ -28,14 +28,14 @@ class Graph:
                 dfs_step(vertex)
         self.complete = True
         return self.visited
-    
+
     def __iter__(self):
         if not self.complete:
             self.visited = self.dfs()
             self.complete = True
         self.index = 0
         return self
-    
+
     def __next__(self):
         if self.index >= len(self.visited):
             raise StopIteration
